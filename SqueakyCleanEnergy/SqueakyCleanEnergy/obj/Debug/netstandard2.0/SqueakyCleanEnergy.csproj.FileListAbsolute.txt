@@ -1,0 +1,13 @@
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\bin\Debug\netstandard2.0\SqueakyCleanEnergy.deps.json
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\bin\Debug\netstandard2.0\SqueakyCleanEnergy.dll
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\bin\Debug\netstandard2.0\SqueakyCleanEnergy.pdb
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.csprojAssemblyReference.cache
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.csproj.CoreCompileInputs.cache
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.AssemblyInfoInputs.cache
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.AssemblyInfo.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\XamlC.stamp
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.dll
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.pdb

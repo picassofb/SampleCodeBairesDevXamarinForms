@@ -1,0 +1,1 @@
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.UWP\SqueakyCleanEnergy.UWP.csproj;x86

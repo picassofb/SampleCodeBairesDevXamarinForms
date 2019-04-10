@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueakyCleanEnergy.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+
+        <StackLayout BackgroundColor="{StaticResource PrincipalColor}">
+
+            <StackLayout VerticalOptions="EndAndExpand" Padding="0,10,0,35">
+                <Image Source="logo.png" HeightRequest="90" />
+            </StackLayout>
+
+            <StackLayout Padding="30,0,30,0">
+
+                <Entry Placeholder="Enter Your Email" PlaceholderColor="{StaticResource TextColor}" FontSize="12" 
+                           Text="{Binding Email}" TextColor="{StaticResource TextColor}" Keyboard="Email"
+                           BackgroundColor="{StaticResource PrincipalColor}"  />
+
+                <Entry  Placeholder="Enter Your Password" PlaceholderColor="{StaticResource TextColor}" 
+                            FontSize="12"  Text="{Binding Password}" TextColor="{StaticResource TextColor}" 
+                            BackgroundColor="{StaticResource PrincipalColor}" 
+                            IsPassword="True" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center"  Padding="0,10,0,10">
+                    <Image Source="{Binding PrivacyPoliceImage}" HeightRequest="20" VerticalOptions="Center" >
+                        <Image.GestureRecognizers>
+                             <TapGestureRecognizer Command="{Binding PrivacyPolicyCommand}" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+
+                    <Label HorizontalOptions="Center" FontSize="Micro"
+                               VerticalOptions="CenterAndExpand" TextColor="{StaticResource TextColor}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="I accept the " />
+                                <Span Text="PRIVACY POLICY"
+                                      TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                                              NumberOfTapsRequired="1" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                </StackLayout>
+
+            <Button  Text="Log In" BackgroundColor="{StaticResource SecundaryColor}" TextColor="{StaticResource TextColor}" 
+                    Command="{Binding LoginCommand}" FontSize="Medium" IsEnabled="{Binding IsEnabled}" FontAttributes="Bold" Padding="0" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center"
+                                 Padding="0,10,0,0">
+                        <Label  Text="Forgot your Password?" FontSize="Micro" TextColor="{StaticResource TextColor}" 
+                                VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer  NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+            </StackLayout>
+            
+            <ActivityIndicator IsRunning="{Binding IsRunning}" />
+            
+
+            <StackLayout  VerticalOptions="EndAndExpand" Spacing="2" BackgroundColor="White" >
+                <ImageButton Source="compartir.png" BackgroundColor="{StaticResource SecundaryColor}"  
+                             Command="{Binding ShareCommand}" Padding="0" HeightRequest="40" />
+            </StackLayout>
+
+        </StackLayout>
+
+
+</ContentPage>
