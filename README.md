@@ -2,10 +2,26 @@
 
 Multi platform Movil App to consume [this Api](https://github.com/picassofb/SampleCodeBairesDevAspNetCore)
 
-<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/1.png" width="350" title="Login">
-<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/2.png" width="350" title="Login">
-<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/3.png" width="350" title="Login">
-<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/4.png" width="350" title="Login">
+
+<table>
+	<tr>
+		<td>
+			<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/1.png" width="200" title="Login">
+		</td>
+		
+		<td>
+			<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/2.png" width="200" title="Home Page / Projects">
+		</td>
+		
+		<td>
+			<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/3.png" width="200" title="Tasks Page">
+		</td>
+		
+		<td>
+			<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/4.png" width="200" title="Add Project">
+		</td>
+	</tr>
+</table>
 
 
 
