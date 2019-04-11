@@ -1,41 +1,13 @@
 # Description
 
-This Api was made to create Projects and assing Tasks to them using a Code First approach. 
+Multi platform Movil App to consume [this Api](https://github.com/picassofb/SampleCodeBairesDevAspNetCore)
 
-```json
-{
-    "projectId": "efc41e38-4c7f-4258-b32e-8a055318e9dc",
-    "projectName": "Liverpool Solar Panel",
-    "isDone": false,
-    "isDeleted": false,
-    "projectTasks": [
-        {
-            "projectTaskId": "a8aeab6b-f0ed-43f6-972b-0e7e73681557",
-            "task": "Inspection the site",
-            "startDate": "2019-04-09T00:00:00",
-            "endDate": "2019-04-22T00:00:00",
-            "isDeleted": false,
-            "projectId": "efc41e38-4c7f-4258-b32e-8a055318e9dc"
-        },
-        {
-            "projectTaskId": "ee8e10cf-a483-477b-9cb0-4708bebbcd39",
-            "task": "Buy Equipments",
-            "startDate": "2019-04-09T00:00:00",
-            "endDate": "2019-04-22T00:00:00",
-            "isDeleted": false,
-            "projectId": "efc41e38-4c7f-4258-b32e-8a055318e9dc"
-        },
-        {
-            "projectTaskId": "0c3ee535-4f8a-49f3-98f5-8e482f5001f1",
-            "task": "Delivery of the project",
-            "startDate": "2019-04-09T00:00:00",
-            "endDate": "2019-04-22T00:00:00",
-            "isDeleted": false,
-            "projectId": "efc41e38-4c7f-4258-b32e-8a055318e9dc"
-        }
-    ]
-}
-```
+<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/1.png" width="350" title="Login">
+<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/2.png" width="350" title="Login">
+<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/3.png" width="350" title="Login">
+<img src="https://github.com/picassofb/SampleCodeBairesDevXamarinForms/blob/master/SqueakyCleanEnergy/SqueakyCleanEnergy.Android/Resources/drawable/Captures/4.png" width="350" title="Login">
+
+
 
 # Tecnologies
 
