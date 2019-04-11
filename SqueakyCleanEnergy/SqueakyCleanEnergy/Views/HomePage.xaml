@@ -6,7 +6,7 @@
              x:Name="Home">
 
     <ContentPage.Content>
-        <StackLayout>
+        <AbsoluteLayout>
             
             <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
                 <Grid.RowDefinitions>
@@ -26,14 +26,13 @@
                 <StackLayout Grid.Row="2" >
                     <SearchBar Placeholder="Search" PlaceholderColor="LightGray"
                                Text="{Binding Filter, Mode=TwoWay}"
-                               SearchCommand="SearchCommand"
                                TextColor="Black">
                     </SearchBar>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3" BackgroundColor="White"/>
 
-                <StackLayout Grid.Row="4" BackgroundColor="White">
+                <StackLayout Grid.Row="4" BackgroundColor="White" Padding="5">
                     <ListView
                         HasUnevenRows="True"
                         ItemsSource="{Binding Projects}"
@@ -55,7 +54,8 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="1"/>
                                                 <ColumnDefinition Width="10*"/>
-                                                <ColumnDefinition Width="68*"/>
+                                                <ColumnDefinition Width="58*"/>
+                                                <ColumnDefinition Width="10*"/>
                                                 <ColumnDefinition Width="10*"/>
                                                 <ColumnDefinition Width="10*"/>
                                                 <ColumnDefinition Width="1"/>
@@ -70,34 +70,56 @@
                                                 Grid.Column="1" Grid.RowSpan="2" Grid.Row="1"
                                                 HorizontalOptions="CenterAndExpand"
                                                 VerticalOptions="CenterAndExpand"
-                                                Source="{Binding StatusImage}"
+                                                Source="{Binding DoneImage}"
                                                 WidthRequest="40">
                                             </Image>
 
-                                            <Label Grid.Column="1" Grid.Row="1"
+                                            <Label Grid.Column="2" Grid.Row="1"
                                             FontAttributes="Bold"
-                                            FontSize="Micro" 
+                                            FontSize="14" 
                                             Text="{Binding ProjectName}"
                                             TextColor="Black" 
-                                            MaxLines="1" />
+                                            MaxLines="1"
+                                            VerticalOptions="CenterAndExpand"/>
 
                                             <Image 
-                                            Grid.Column="4" Grid.RowSpan="2" Grid.Row="1"
-                                            HorizontalOptions="CenterAndExpand"
-                                            VerticalOptions="CenterAndExpand"
-                                            WidthRequest="50"
-                                            Source="no_favorite.png" />
-
-                                            <Image 
-                                            Grid.Column="5" Grid.RowSpan="2" Grid.Row="1"
-                                            HorizontalOptions="CenterAndExpand"
-                                            VerticalOptions="CenterAndExpand"
-                                            Source="mas.png">
+                                                Grid.Column="3" Grid.RowSpan="2" Grid.Row="1"
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                                Source="edit.png">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer 
-                                                    Command="{Binding Path=BindingContext.CreateTaskCommand, Source={x:Reference Home}}"
-                                                    CommandParameter="{Binding .}"
-                                                    NumberOfTapsRequired="1">
+                                                        Command="{Binding Path=BindingContext.UpdateProjectCommand, Source={x:Reference Home}}"
+                                                        CommandParameter="{Binding .}"
+                                                        NumberOfTapsRequired="1">
+                                                    </TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+
+                                            <Image 
+                                                Grid.Column="4" Grid.RowSpan="2" Grid.Row="1"
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                                Source="delete.png">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        Command="{Binding Path=BindingContext.DeleteProjectCommand, Source={x:Reference Home}}"
+                                                        CommandParameter="{Binding .}"
+                                                        NumberOfTapsRequired="1">
+                                                    </TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+
+                                            <Image 
+                                                Grid.Column="5" Grid.RowSpan="2" Grid.Row="1"
+                                                HorizontalOptions="CenterAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                                Source="arrow.png">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        Command="{Binding Path=BindingContext.DisplayTaskCommand, Source={x:Reference Home}}"
+                                                        CommandParameter="{Binding .}"
+                                                        NumberOfTapsRequired="1">
                                                     </TapGestureRecognizer>
                                                 </Image.GestureRecognizers>
                                             </Image>
@@ -113,8 +135,15 @@
 
             </Grid>
 
-
-        </StackLayout>
+            <ImageButton Source="more.png"
+                        Command="{Binding AddProjectCommand}"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="1.0,1.0,-1,-1"
+                        Margin="10"
+                        HeightRequest="50"
+                        BackgroundColor="White">
+            </ImageButton>
+        </AbsoluteLayout>
     </ContentPage.Content>
 
 

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueakyCleanEnergy.Views.AddTaskPage"
+             Title="Add Task">
+    <ContentPage.Content>
+
+        <StackLayout Padding="30,50,30,0">
+
+            <Entry Placeholder="Enter Your Task Name" PlaceholderColor="Silver" FontSize="12" 
+                   Text="{Binding Task}" TextColor="Black" Keyboard="Email"  />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Start Date" />
+                <DatePicker Date="{Binding StartDate}" ></DatePicker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="End Date" />
+                <DatePicker Date="{Binding EndDate}" ></DatePicker>
+            </StackLayout>
+
+            <Button  Text="Add Task" BackgroundColor="{StaticResource SecundaryColor}" TextColor="{StaticResource TextColor}" 
+                     Command="{Binding AddCommand}" FontSize="Medium" IsEnabled="{Binding IsEnabled}" FontAttributes="Bold" Padding="0" />
+
+
+            <ActivityIndicator IsRunning="{Binding IsRunning}" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace SqueakyCleanEnergy.Models
 {
-    class Project
+    public class Project
     {
         [JsonProperty("projectId")]
         public Guid ProjectId { get; set; }
@@ -13,8 +13,8 @@ namespace SqueakyCleanEnergy.Models
         [JsonProperty("projectName")]
         public string ProjectName { get; set; }
 
-        [JsonProperty("status")]
-        public bool Status { get; set; }
+        [JsonProperty("isDone")]
+        public bool IsDone { get; set; }
 
         [JsonProperty("isDeleted")]
         public bool IsDeleted { get; set; }
@@ -23,17 +23,11 @@ namespace SqueakyCleanEnergy.Models
         public List<object> ProjectTasks { get; set; }
 
         [JsonIgnore]
-        private string _statusImage;
-        public string StatusImage
+        private string _doneImage;
+        public string DoneImage
         {
-            get
-            {
-                if (Status)
-                    _statusImage = "done.png";
-
-                return "in_progress.png";
-            }
-            set => _statusImage = value;
+            get => IsDone ? "done.png" : "in_progress.png";
+            set => _doneImage = value;
         }
     }
 }

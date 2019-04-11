@@ -126,6 +126,9 @@ namespace SqueakyCleanEnergy.ViewModels
 
             var response = await _apiService.GetTokenAsync("/api", "/account/login", request);
 
+            IsRunning = false;
+            IsEnabled = true;
+
             //Si loguea entonces;
             if (response.IsSuccess)
             {
@@ -135,10 +138,9 @@ namespace SqueakyCleanEnergy.ViewModels
                 await _navigation.PopToRootAsync();
             }
 
-            await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
+            await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Ok");
 
-            IsRunning = false;
-            IsEnabled = true;
+
         }
     }
 }

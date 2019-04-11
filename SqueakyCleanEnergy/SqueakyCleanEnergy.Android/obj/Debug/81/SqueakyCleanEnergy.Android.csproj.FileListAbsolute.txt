@@ -119,6 +119,9 @@ E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Andro
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Platform.Android.pdb
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\res\drawable\arrow.png
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\res\drawable\edit.png
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\res\drawable\delete.png
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\bin\Debug\netstandard2.0\SqueakyCleanEnergy.dll
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\bin\Debug\SqueakyCleanEnergy.dll.mdb
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy.Android\obj\Debug\81\linksrc\SqueakyCleanEnergy.dll.mdb

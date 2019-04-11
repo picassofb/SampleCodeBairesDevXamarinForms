@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueakyCleanEnergy.Views.AddProjectPage"
+             Title="Add Project">
+    <ContentPage.Content>
+
+        <StackLayout Padding="30,50,30,0">
+
+            <Entry Placeholder="Enter Your Project Name" PlaceholderColor="Silver" FontSize="12" 
+                   Text="{Binding ProjectName}" TextColor="Black" Keyboard="Email"  />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Is Done?" />
+                <Switch IsToggled="{Binding Done}" />
+            </StackLayout>
+
+            <Button  Text="Add" BackgroundColor="{StaticResource SecundaryColor}" TextColor="{StaticResource TextColor}" 
+                    Command="{Binding AddCommand}" FontSize="Medium" IsEnabled="{Binding IsEnabled}" FontAttributes="Bold" Padding="0" />
+
+
+            <ActivityIndicator IsRunning="{Binding IsRunning}" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

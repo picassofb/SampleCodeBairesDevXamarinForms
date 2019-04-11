@@ -11,3 +11,7 @@ E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\D
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\XamlC.stamp
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.dll
 E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\SqueakyCleanEnergy.pdb
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\Views\DisplayTaskPage.xaml.g.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\Views\AddProjectPage.xaml.g.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\Views\UpdateProjectPage.xaml.g.cs
+E:\ME.COM\Xamarin\SqueakyCleanEnergy\SqueakyCleanEnergy\SqueakyCleanEnergy\obj\Debug\netstandard2.0\Views\AddTaskPage.xaml.g.cs

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.Linq;
 using System.Windows.Input;
 using SqueakyCleanEnergy.Models;
 using SqueakyCleanEnergy.Services;
+using SqueakyCleanEnergy.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -16,9 +17,11 @@ namespace SqueakyCleanEnergy.ViewModels
         private readonly ApiService _apiService = new ApiService();
         private List<Project> ProjectsList { get; set; }
 
-        public ICommand SearchCommand { get; set; }
         public ICommand RefreshCommand { get; set; }
-        public ICommand CreateTaskCommand { get; set; }
+        public ICommand AddProjectCommand { get; set; }
+        public ICommand UpdateProjectCommand { get; set; }
+        public ICommand DeleteProjectCommand { get; set; }
+        public ICommand DisplayTaskCommand { get; set; }
 
 
         private ObservableCollection<Project> _projects;
@@ -57,26 +60,75 @@ namespace SqueakyCleanEnergy.ViewModels
             set { _isRefreshing = value; OnPropertyChanged(); }
         }
 
-     
-
-
         public HomeViewModel(INavigation navigation)
         {
             Projects = new ObservableCollection<Project>();
-            SearchCommand = new Command(Search);
             RefreshCommand = new Command(LoadProjects);
-            CreateTaskCommand = new Command(CreateTask);
+            AddProjectCommand = new Command(AddProject);
+            DisplayTaskCommand = new Command(DisplayTask);
+            UpdateProjectCommand = new Command(UpdateProject);
+            DeleteProjectCommand = new Command(DeleteProject);
 
             LoadProjects();
 
             IsEnabled = true;
             IsRefreshing = false;
             _navigation = navigation;
+
+            MessagingCenter.Subscribe<string>(this, "UpdateListProject", (value) =>
+            {
+                LoadProjects();
+            });
         }
 
-        private void CreateTask()
+        private async void DeleteProject(object obj)
         {
-            throw new NotImplementedException();
+            var projectToDelete = obj as Project;
+
+            if (projectToDelete != null)
+            {
+                var action = await Application.Current.MainPage.DisplayAlert("Delete?",
+                $"Are you sure to delete '{projectToDelete.ProjectName}' Project?",
+                "Yes", "No");
+
+                if (action)
+                {
+                    var response = await _apiService.DeleteAsync(
+                        "/api",
+                        "/project",
+                        projectToDelete.ProjectId,
+                        "Bearer",
+                        Preferences.Get("Token", string.Empty));
+
+                    if (response.IsSuccess)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Success", 
+                            $"Project '{projectToDelete.ProjectName}' Has Been Deleted", 
+                            "Ok");
+                        LoadProjects();
+                    }
+                    else
+                        await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Ok");
+                }
+            }
+        }
+
+
+        private async void UpdateProject(object obj)
+        {
+            var project = obj as Project;
+            await _navigation.PushAsync(new UpdateProjectPage(project), true);
+        }
+
+        private async void DisplayTask(object obj)
+        {
+            var requerimiento = obj as Project;
+            await _navigation.PushAsync(new DisplayTaskPage(requerimiento), true);
+        }
+
+        private async void AddProject(object obj)
+        {
+            await _navigation.PushAsync(new AddProjectPage(), true);
         }
 
         private async void LoadProjects()
@@ -87,22 +139,29 @@ namespace SqueakyCleanEnergy.ViewModels
                 "/api", "/project", "Bearer", Preferences.Get("Token", String.Empty)
             );
 
-            if (response.IsSuccess)
+            IsRefreshing = false;
+
+            if (!response.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert("Info", "Session Expired", "Ok");
+                Application.Current.MainPage = new NavigationPage(new LoginPage());
+                await _navigation.PopToRootAsync();
+            }
+            else
             {
                 ProjectsList = (List<Project>)response.Result;
                 Projects = new ObservableCollection<Project>(ProjectsList);
             }
-
-
-            await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
-
-            IsRefreshing = false;
         }
 
 
         private void Search()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Filter))
+                Projects = new ObservableCollection<Project>(ProjectsList);
+            else
+                Projects = new ObservableCollection<Project>(
+                    ProjectsList.Where(l => l.ProjectName.ToLower().Contains(Filter.ToLower())));
         }
 
     }

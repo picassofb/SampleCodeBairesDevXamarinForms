@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueakyCleanEnergy.Views.DisplayTaskPage"
+             Title="{Binding ProjectName}">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <StackLayout BackgroundColor="White" Padding="5">
+                <ListView
+                        HasUnevenRows="True"
+                        ItemsSource="{Binding ProjectTasks}"
+                        IsRefreshing="{Binding IsRefreshing}"
+                        IsPullToRefreshEnabled="True"
+                        SeparatorVisibility="None"
+                        RefreshCommand="{Binding RefreshCommand}">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                        HasShadow="True"
+                                        BackgroundColor="#E6E7E8"
+                                        Padding="0"
+                                        Margin="0,0,0,5">
+
+                                    <Grid RowSpacing="0" ColumnSpacing="5" VerticalOptions="Fill" BackgroundColor="#E6E7E8">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="10"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="10"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+
+                                        <Label  Grid.Row="1"
+                                            FontAttributes="Bold"
+                                            FontSize="12" 
+                                            Text="{Binding Task}"
+                                            TextColor="Black" 
+                                            MaxLines="1"
+                                            VerticalOptions="CenterAndExpand"/>
+
+                                        <Label  Grid.Row="2"
+                                                FontSize="10" 
+                                                Text="{Binding StartDate}"
+                                                TextColor="Black" 
+                                                MaxLines="1"
+                                                VerticalOptions="CenterAndExpand"/>
+
+                                        <Label  Grid.Row="3"
+                                                FontSize="10" 
+                                                Text="{Binding EndDate}"
+                                                TextColor="Black" 
+                                                MaxLines="1"
+                                                VerticalOptions="CenterAndExpand"/>
+                                    </Grid>
+
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+
+
+            <ImageButton Source="more.png"
+                         Command="{Binding AddTaskCommand}"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                         AbsoluteLayout.LayoutBounds="1.0,1.0,-1,-1"
+                         Margin="10"
+                         HeightRequest="50"
+                         BackgroundColor="White">
+            </ImageButton>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
