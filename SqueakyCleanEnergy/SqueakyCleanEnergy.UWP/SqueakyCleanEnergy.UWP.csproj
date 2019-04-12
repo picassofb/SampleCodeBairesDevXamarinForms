@@ -103,6 +103,17 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scale-100\arrow.png" />
+    <Content Include="scale-100\compartir.png" />
+    <Content Include="scale-100\delete.png" />
+    <Content Include="scale-100\done.png" />
+    <Content Include="scale-100\edit.png" />
+    <Content Include="scale-100\ic_check_box.png" />
+    <Content Include="scale-100\ic_check_box_outline_blank.png" />
+    <Content Include="scale-100\in_progress.png" />
+    <Content Include="scale-100\logo.png" />
+    <Content Include="scale-100\more.png" />
+    <Content Include="scale-100\no_favorite.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />

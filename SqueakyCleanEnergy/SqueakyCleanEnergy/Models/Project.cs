@@ -23,6 +23,7 @@ namespace SqueakyCleanEnergy.Models
         public List<object> ProjectTasks { get; set; }
 
         [JsonIgnore]
+        //Change the image according the isDone value
         private string _doneImage;
         public string DoneImage
         {

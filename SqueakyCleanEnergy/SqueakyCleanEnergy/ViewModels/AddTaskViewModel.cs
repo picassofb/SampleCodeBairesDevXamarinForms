@@ -11,6 +11,8 @@ namespace SqueakyCleanEnergy.ViewModels
 {
     class AddTaskViewModel:BaseViewModel
     {
+        #region Properties and Services
+
         private readonly INavigation _navigation;
         private readonly ApiService _apiService = new ApiService();
         public ICommand AddCommand { get; set; }
@@ -56,6 +58,8 @@ namespace SqueakyCleanEnergy.ViewModels
             get => _isRunning;
             set { _isRunning = value; OnPropertyChanged(); }
         }
+
+        #endregion
 
         public AddTaskViewModel(INavigation navigation, Guid projectId)
         {

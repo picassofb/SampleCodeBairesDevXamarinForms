@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SqueakyCleanEnergy.App">
     <Application.Resources>
+        
+        <!--Values to be used across the app-->
 
         <x:String x:Key="UrlBase">https://192.168.0.131:44393</x:String>
 

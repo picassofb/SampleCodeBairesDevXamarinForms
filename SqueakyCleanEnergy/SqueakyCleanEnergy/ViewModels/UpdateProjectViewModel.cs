@@ -12,6 +12,8 @@ namespace SqueakyCleanEnergy.ViewModels
     class UpdateProjectViewModel: BaseViewModel
     {
 
+        #region Properties Attributes and Services
+
         private readonly INavigation _navigation;
         private readonly ApiService _apiService = new ApiService();
         public ICommand UpdateCommand { get; set; }
@@ -49,6 +51,8 @@ namespace SqueakyCleanEnergy.ViewModels
             set { _isRunning = value; OnPropertyChanged(); }
         }
 
+        #endregion
+
 
         public UpdateProjectViewModel(INavigation navigation, Project projectToUpdate)
         {
@@ -66,7 +70,7 @@ namespace SqueakyCleanEnergy.ViewModels
         {
             if (string.IsNullOrWhiteSpace(ProjectName))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a name for the project.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a name for the project.", "Ok");
                 return;
             }
 

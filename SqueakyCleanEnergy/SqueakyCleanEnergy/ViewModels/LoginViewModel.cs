@@ -10,6 +10,8 @@ namespace SqueakyCleanEnergy.ViewModels
 {
     class LoginViewModel: BaseViewModel
     {
+        #region Properties Attributes and Services
+
         private readonly INavigation _navigation;
         private readonly ApiService _apiService = new ApiService();
 
@@ -42,11 +44,10 @@ namespace SqueakyCleanEnergy.ViewModels
             set { _isRunning = value; OnPropertyChanged(); }
         }
 
-
-
         public string Email { get; set; }
         public string Password { get; set; }
-            
+
+        #endregion
 
 
         public LoginViewModel(INavigation navigation)
@@ -56,7 +57,7 @@ namespace SqueakyCleanEnergy.ViewModels
             ShareCommand = new Command(ShareApp);
             ClickCommand = new Command(Click);
 
-            Preferences.Set("politicaAceptada", true);
+            Preferences.Set("policyAccepted", true);
             PrivacyPoliceImage = "ic_check_box.png";
             IsEnabled = true;
             IsRunning = false;
@@ -80,16 +81,16 @@ namespace SqueakyCleanEnergy.ViewModels
 
         private void PrivacyPolicy()
         {
-            var politicaEstado = Preferences.Get("politicaAceptada", false);
+            var politicaEstado = Preferences.Get("policyAccepted", false);
             if (politicaEstado)
             {
                 PrivacyPoliceImage = "ic_check_box_outline_blank.png";
-                Preferences.Set("politicaAceptada", false);
+                Preferences.Set("policyAccepted", false);
             }
             else
             {
                 PrivacyPoliceImage = "ic_check_box.png";
-                Preferences.Set("politicaAceptada", true);
+                Preferences.Set("policyAccepted", true);
             }
         }
 
@@ -97,28 +98,28 @@ namespace SqueakyCleanEnergy.ViewModels
         {
 
 
-            if (!Preferences.Get("politicaAceptada", false))
+            if (!Preferences.Get("policyAccepted", false))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "You MUST accept the privacy policy.", "Accept");
+                await Application.Current.MainPage.DisplayAlert("Error", "You MUST accept the privacy policy.", "Ok");
                 return;
             }
 
             if (string.IsNullOrEmpty(Email))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Insert your Email.", "Accept");
+                await Application.Current.MainPage.DisplayAlert("Error", "Insert your Email.", "Ok");
                 return;
             }
 
             if (string.IsNullOrEmpty(Password))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Insert your Password.", "Accept");
+                await Application.Current.MainPage.DisplayAlert("Error", "Insert your Password.", "Ok");
                 return;
             }
 
             var request = new TokenRequest()
             {
-                Email = this.Email,
-                Password = this.Password
+                Email = Email,
+                Password = Password
             };
 
             IsEnabled = false;
@@ -129,11 +130,14 @@ namespace SqueakyCleanEnergy.ViewModels
             IsRunning = false;
             IsEnabled = true;
 
-            //Si loguea entonces;
+            //If authentication is succeeded
             if (response.IsSuccess)
             {
                 var token = (TokenResponse) response.Result;
+
+                // Token is stores in Preferences -> This works across Android, iOS and UWP
                 Preferences.Set("Token", token.Token);
+
                 Application.Current.MainPage = new NavigationPage(new HomePage());
                 await _navigation.PopToRootAsync();
             }

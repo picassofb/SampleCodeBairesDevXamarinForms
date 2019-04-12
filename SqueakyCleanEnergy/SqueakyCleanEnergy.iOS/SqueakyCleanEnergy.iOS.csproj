@@ -163,4 +163,37 @@
       <Name>SqueakyCleanEnergy</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_check_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_check_box_outline_blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\in_progress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\no_favorite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\compartir.png" />
+  </ItemGroup>
 </Project>

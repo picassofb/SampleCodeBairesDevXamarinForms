@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using SqueakyCleanEnergy.Models;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace SqueakyCleanEnergy.Services
 {
     class ApiService
     {
+        // Se obtiene la UrlBase de los Key Strings de App
         private readonly string _urlbase = Application.Current.Resources["UrlBase"].ToString();
 
 
-        //Access to API via POST to obtain Token
+        //Method to Get the Token 
         public async Task<Response> GetTokenAsync(
             string servicePrefix,
             string controller,
@@ -25,7 +24,9 @@ namespace SqueakyCleanEnergy.Services
         {
             try
             {
+                // Serialize the request to email and password in Json Format
                 var requestString = JsonConvert.SerializeObject(request);
+
                 var content = new StringContent(requestString, Encoding.UTF8, "application/json");
 
                 var client = new HttpClient(new HttpClientHandler())
@@ -37,6 +38,7 @@ namespace SqueakyCleanEnergy.Services
 
                 var response = await client.PostAsync(url, content);
                 var result = await response.Content.ReadAsStringAsync();
+
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -110,6 +112,8 @@ namespace SqueakyCleanEnergy.Services
             }
         }
 
+
+        //Sends a Post request to the Api to Create a Project or Task
         public async Task<Response> PostAsync<T>(
             string servicePrefix,
             string controller,
@@ -157,6 +161,8 @@ namespace SqueakyCleanEnergy.Services
             }
         }
 
+
+        //Sends an Update request to the Api with an specific ID
         public async Task<Response> PutAsync<T>(
             string servicePrefix,
             string controller,
@@ -207,6 +213,7 @@ namespace SqueakyCleanEnergy.Services
             }
         }
 
+        //Sends an Delete request to the Api with an specific ID
         public async Task<Response> DeleteAsync(
             string servicePrefix,
             string controller,

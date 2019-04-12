@@ -13,6 +13,8 @@ namespace SqueakyCleanEnergy.ViewModels
 {
     class DisplayTaskViewModel: BaseViewModel
     {
+        #region Properties and Services
+
         private readonly INavigation _navigation;
         private readonly ApiService _apiService = new ApiService();
 
@@ -48,6 +50,8 @@ namespace SqueakyCleanEnergy.ViewModels
             set { _isRefreshing = value; OnPropertyChanged(); }
         }
 
+        #endregion
+
         public DisplayTaskViewModel(INavigation navigation, Project project)
         {
             ProjectTasks = new ObservableCollection<ProjectTask>();
@@ -60,6 +64,8 @@ namespace SqueakyCleanEnergy.ViewModels
 
             LoadTasks();
 
+            // Suscribe to MessagingCenter to get notify when an event happens in a different view,
+            // in this case when a task is created LoadTasks is called to apply the changes to the ListView in the view
             MessagingCenter.Subscribe<string>(this, "UpdateListProjectTask", (value) =>
             {
                 LoadTasks();

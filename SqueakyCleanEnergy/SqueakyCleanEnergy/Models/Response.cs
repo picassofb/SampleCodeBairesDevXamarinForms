@@ -4,6 +4,7 @@ using System.Text;
 
 namespace SqueakyCleanEnergy.Models
 {
+    // Class to bo used as a Response for the services
     public class Response
     {
         public bool IsSuccess { get; set; }

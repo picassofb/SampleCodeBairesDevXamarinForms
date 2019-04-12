@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using SqueakyCleanEnergy.Models;
 using SqueakyCleanEnergy.Services;
-using SqueakyCleanEnergy.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -12,6 +8,8 @@ namespace SqueakyCleanEnergy.ViewModels
 {
     class AddProjectViewModel:BaseViewModel
     {
+        #region Properties and Services
+
         private readonly INavigation _navigation;
         private readonly ApiService _apiService = new ApiService();
         public ICommand AddCommand { get; set; }
@@ -56,12 +54,13 @@ namespace SqueakyCleanEnergy.ViewModels
             IsEnabled = true;
             _navigation = navigation;
         }
+        #endregion
 
         private async void AddProject()
         {
             if (string.IsNullOrWhiteSpace(ProjectName))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a name for the project.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error", "Please enter a name for the project.", "Ok");
                 return;
             }
 
@@ -84,7 +83,6 @@ namespace SqueakyCleanEnergy.ViewModels
             IsRunning = false;
             IsEnabled = true;
 
-            //Si loguea entonces;
             if (response.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert("Success", "Project Added", "Ok");

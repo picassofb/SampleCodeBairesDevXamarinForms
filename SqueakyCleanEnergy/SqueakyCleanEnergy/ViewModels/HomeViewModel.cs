@@ -9,10 +9,13 @@ using SqueakyCleanEnergy.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
+
 namespace SqueakyCleanEnergy.ViewModels
 {
     class HomeViewModel: BaseViewModel
     {
+        #region Properties and Services
+
         private readonly INavigation _navigation;
         private readonly ApiService _apiService = new ApiService();
         private List<Project> ProjectsList { get; set; }
@@ -60,6 +63,8 @@ namespace SqueakyCleanEnergy.ViewModels
             set { _isRefreshing = value; OnPropertyChanged(); }
         }
 
+        #endregion
+
         public HomeViewModel(INavigation navigation)
         {
             Projects = new ObservableCollection<Project>();
@@ -75,6 +80,8 @@ namespace SqueakyCleanEnergy.ViewModels
             IsRefreshing = false;
             _navigation = navigation;
 
+            // Suscribe to MessagingCenter to get notify when an event happens in a different view,
+            // in this case when a Project is created LoadTasks is called to apply the changes to the ListView in the view
             MessagingCenter.Subscribe<string>(this, "UpdateListProject", (value) =>
             {
                 LoadProjects();
